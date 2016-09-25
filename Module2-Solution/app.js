@@ -2,13 +2,13 @@
   'use strict';
 
   var app =  angular.module('ShoppingListCheckOff', []);
-  app.controller('RemainingListController', RemainingListController);
-  app.controller('BoughtListController', BoughtListController);
+  app.controller('ToBuyShoppingController', ToBuyShoppingController);
+  app.controller('AlreadyBoughtShoppingController', AlreadyBoughtShoppingController);
   app.service('ShoppingListCheckOffService', ShoppingListCheckOffService);
 
-  RemainingListController.$inject = ['ShoppingListCheckOffService']
+  ToBuyShoppingController.$inject = ['ShoppingListCheckOffService']
 
-  function RemainingListController (ShoppingListCheckOffService) {
+  function ToBuyShoppingController (ShoppingListCheckOffService) {
     var remainingListController = this;
 
     remainingListController.Items = ShoppingListCheckOffService.GetRemainingItems();
@@ -23,9 +23,9 @@
     };
   };
 
-  BoughtListController.$inject = ['ShoppingListCheckOffService']
+  AlreadyBoughtShoppingController.$inject = ['ShoppingListCheckOffService']
 
-  function BoughtListController (ShoppingListCheckOffService) {
+  function AlreadyBoughtShoppingController (ShoppingListCheckOffService) {
     var boughtListController = this;
     boughtListController.Items = ShoppingListCheckOffService.GetBoughtItems();
 
